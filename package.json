@@ -1,0 +1,25 @@
+{
+  "name": "sevsegdisplayclock",
+  "version": "1.0.0",
+  "description": "online arduino clock interface",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "johnny-five": "^1.4.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrypticSquirrel/SevSegDisplayClock.git"
+  },
+  "author": "Edward Breja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrypticSquirrel/SevSegDisplayClock/issues"
+  },
+  "homepage": "https://github.com/CrypticSquirrel/SevSegDisplayClock#readme"
+}
