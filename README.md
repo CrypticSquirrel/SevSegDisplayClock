@@ -15,7 +15,7 @@ This is the codebase (built on top of platform.io) for the 7 segment display pro
 
 First you will need Node/Express to run the server
 - Clone the repository
-- Install Node/Express framework
+- Install Node.js
 - If you are using MacOS you can use brew to install node:
 ``` 
 brew install node
