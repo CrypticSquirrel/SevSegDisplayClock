@@ -24,7 +24,7 @@ brew install node
 ``` 
 npm install
 ```
-- Now you can run the server with node or nodemon from the command line
+- Now you can run the server with node or nodemon from the command line:
 ``` 
 nodemon server.js
 ```
