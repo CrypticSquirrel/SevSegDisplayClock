@@ -1,3 +1,6 @@
+### Adding settings menu/page
+- [persistant data](https://stackoverflow.com/questions/1981673/persist-javascript-variables-across-pages)
+
 ### User can customize what is shown on clock
 - change timezone
 - set an alarm
