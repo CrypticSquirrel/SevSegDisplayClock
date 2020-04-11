@@ -1,7 +1,3 @@
-## user story
-
-- when user visits site -> gets current timezone and displays it on clock
-
 ### User can customize what is shown on clock
 - change timezone
 - set an alarm
@@ -13,4 +9,5 @@
 - randomize / strobe / rotation
 - Easter Eggs : display: "run" / display "help"
 
+[help im stuck](https://circuitdigest.com/microcontroller-projects/arduino-nodejs-tutorial-control-led-brightness-with-web-interface)
 
