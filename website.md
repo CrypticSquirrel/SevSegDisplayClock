@@ -1,6 +1,5 @@
-## user story
-
-- when user visits site -> gets current timezone and displays it on clock
+### Adding settings menu/page
+- [persistant data](https://stackoverflow.com/questions/1981673/persist-javascript-variables-across-pages)
 
 ### User can customize what is shown on clock
 - change timezone
@@ -13,4 +12,5 @@
 - randomize / strobe / rotation
 - Easter Eggs : display: "run" / display "help"
 
+[help im stuck](https://circuitdigest.com/microcontroller-projects/arduino-nodejs-tutorial-control-led-brightness-with-web-interface)
 
