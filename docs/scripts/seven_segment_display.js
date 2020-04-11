@@ -5,13 +5,12 @@ const display4 = document.getElementById('display-4');
 const display5 = document.getElementById('display-5');
 const display6 = document.getElementById('display-6');
 
-function zeroFill(string, length) {
+function zeroFill(string) {
   let chars = string;
-  for (let i = 0, l = length - chars.length; i < l; i += 1) {
+  for (let i = 0, l = 2 - chars.length; i < l; i += 1) {
     chars = `0${string}`;
   }
-  console.log(string);
-  return string;
+  return chars;
 }
 
 /**
@@ -22,9 +21,9 @@ function zeroFill(string, length) {
 
 function updateDisplays() {
   const d = new Date();
-  const h = zeroFill(d.getHours().toString(), 2);
-  const m = zeroFill(d.getMinutes().toString(), 2);
-  const s = zeroFill(d.getSeconds().toString(), 2);
+  const h = zeroFill(d.getHours().toString());
+  const m = zeroFill(d.getMinutes().toString());
+  const s = zeroFill(d.getSeconds().toString());
 
   const baseClass = 'col clock-box display-no-';
 
