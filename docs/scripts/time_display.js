@@ -25,6 +25,8 @@ function updateDisplays() {
   const m = zeroFill(d.getMinutes().toString());
   const s = zeroFill(d.getSeconds().toString());
 
+  document.title = `${h}:${m}`;
+
   const baseClass = 'col clock-box display-no-';
 
   display1.className = baseClass + h[0];
