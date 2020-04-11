@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Edward Breja and Matt Lonto" />
+    <link rel="icon" href="../resources/clock.ico" />
+    <title>Arduino Clock Control</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link href="../resources/header.css" rel="stylesheet" />
+    <link href="../resources/seven_segment_display.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="#" aria-label="circle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="d-block mx-auto"
+            role="img"
+            viewBox="0 0 24 24"
+            focusable="false"
+          >
+            <title>Circle</title>
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+            />
+          </svg>
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Clock</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Timer</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Stop Watch</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Get Crazy</a>
+      </div>
+    </nav>
+
+    <div class="vertical-center">
+      <div id="clock-container" class="container">
+        <div class="row">
+          <div id="display-1" class="col clock-box display-no-0">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-2" class="col clock-box display-no-1">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-3" class="col clock-box display-no-2">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-4" class="col clock-box display-no-3">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-5" class="col clock-box display-no-4">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+          <div id="display-6" class="col clock-box display-no-5">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!--Homemade Scripts-->
+    <script src="../scripts/seven_segment_display.js"></script>
+  </body>
+</html>
