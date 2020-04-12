@@ -1,116 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="author" content="Edward Breja and Matt Lonto" />
-    <link rel="icon" href="../resources/clock.ico" />
-    <title>Arduino Clock Control</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <link href="../resources/header.css" rel="stylesheet" />
-    <link href="../resources/seven_segment_display.css" rel="stylesheet" />
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="author" content="Edward Breja and Matt Lonto" />
+        <link rel="icon" href="../resources/clock.ico" />
+        <title>Arduino Clock Control</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        />
+        <link href="../resources/header.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../resources/crazy.css" />
+    </head>
 
-  <body>
-    <nav class="site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="settings.html" aria-label="settings">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="bi bi-gear"
-            width="22"
-            height="22"
-            viewBox="0 0 16 16"
-            fill="currentColor"
-          >
-            <title>settings</title>
-            <path
-              fill-rule="evenodd"
-              d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 014.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 018.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
-              clip-rule="evenodd"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M8 5.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM4.754 8a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </a>
-        <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
-        <a class="py-2 d-none d-md-inline-block" href="clock.html">Clock</a>
-        <a class="py-2 d-none d-md-inline-block" href="timer.html">Timer</a>
-        <a class="py-2 d-none d-md-inline-block" href="stop_watch.html">Stop Watch</a>
-        <a class="py-2 d-none d-md-inline-block" href="">Get Crazy</a>
-      </div>
-    </nav>
+    <body>
+        <nav class="site-header sticky-top py-1">
+            <div class="container d-flex flex-column flex-md-row justify-content-between">
+                <a class="py-2" href="settings.html" aria-label="settings">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="bi bi-gear"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                    >
+                        <title>settings</title>
+                        <path
+                            fill-rule="evenodd"
+                            d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 014.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 01-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 011.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 012.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 012.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 011.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 01-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 018.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 001.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 00.52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 00-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 00-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 00-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 00-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 00.52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 001.255-.52l.094-.319z"
+                            clip-rule="evenodd"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 5.754a2.246 2.246 0 100 4.492 2.246 2.246 0 000-4.492zM4.754 8a3.246 3.246 0 116.492 0 3.246 3.246 0 01-6.492 0z"
+                            clip-rule="evenodd"
+                        />
+                    </svg>
+                </a>
+                <a class="py-2 d-none d-md-inline-block" href="../index.html">Home</a>
+                <a class="py-2 d-none d-md-inline-block" href="clock.html">Clock</a>
+                <a class="py-2 d-none d-md-inline-block" href="timer.html">Timer</a>
+                <a class="py-2 d-none d-md-inline-block" href="stop_watch.html">Stop Watch</a>
+                <a class="py-2 d-none d-md-inline-block" href="">Get Crazy</a>
+            </div>
+        </nav>
 
-    <div class="vertical-center">
-      <div id="clock-container" class="container">
-        <div class="row">
-          <div id="display-1" class="col clock-box display-no-0">
-            <div class="segment-x segment-a"><span class="segment-border"></span></div>
-            <div class="segment-y segment-b"><span class="segment-border"></span></div>
-            <div class="segment-y segment-c"><span class="segment-border"></span></div>
-            <div class="segment-x segment-d"><span class="segment-border"></span></div>
-            <div class="segment-y segment-e"><span class="segment-border"></span></div>
-            <div class="segment-y segment-f"><span class="segment-border"></span></div>
-            <div class="segment-x segment-g"><span class="segment-border"></span></div>
-          </div>
-          <div id="display-2" class="col clock-box display-no-1">
-            <div class="segment-x segment-a"><span class="segment-border"></span></div>
-            <div class="segment-y segment-b"><span class="segment-border"></span></div>
-            <div class="segment-y segment-c"><span class="segment-border"></span></div>
-            <div class="segment-x segment-d"><span class="segment-border"></span></div>
-            <div class="segment-y segment-e"><span class="segment-border"></span></div>
-            <div class="segment-y segment-f"><span class="segment-border"></span></div>
-            <div class="segment-x segment-g"><span class="segment-border"></span></div>
-          </div>
-          <div id="display-3" class="col clock-box display-no-2">
-            <div class="segment-x segment-a"><span class="segment-border"></span></div>
-            <div class="segment-y segment-b"><span class="segment-border"></span></div>
-            <div class="segment-y segment-c"><span class="segment-border"></span></div>
-            <div class="segment-x segment-d"><span class="segment-border"></span></div>
-            <div class="segment-y segment-e"><span class="segment-border"></span></div>
-            <div class="segment-y segment-f"><span class="segment-border"></span></div>
-            <div class="segment-x segment-g"><span class="segment-border"></span></div>
-          </div>
-          <div id="display-4" class="col clock-box display-no-3">
-            <div class="segment-x segment-a"><span class="segment-border"></span></div>
-            <div class="segment-y segment-b"><span class="segment-border"></span></div>
-            <div class="segment-y segment-c"><span class="segment-border"></span></div>
-            <div class="segment-x segment-d"><span class="segment-border"></span></div>
-            <div class="segment-y segment-e"><span class="segment-border"></span></div>
-            <div class="segment-y segment-f"><span class="segment-border"></span></div>
-            <div class="segment-x segment-g"><span class="segment-border"></span></div>
-          </div>
-          <div id="display-5" class="col clock-box display-no-4">
-            <div class="segment-x segment-a"><span class="segment-border"></span></div>
-            <div class="segment-y segment-b"><span class="segment-border"></span></div>
-            <div class="segment-y segment-c"><span class="segment-border"></span></div>
-            <div class="segment-x segment-d"><span class="segment-border"></span></div>
-            <div class="segment-y segment-e"><span class="segment-border"></span></div>
-            <div class="segment-y segment-f"><span class="segment-border"></span></div>
-            <div class="segment-x segment-g"><span class="segment-border"></span></div>
-          </div>
-          <div id="display-6" class="col clock-box display-no-5">
-            <div class="segment-x segment-a"><span class="segment-border"></span></div>
-            <div class="segment-y segment-b"><span class="segment-border"></span></div>
-            <div class="segment-y segment-c"><span class="segment-border"></span></div>
-            <div class="segment-x segment-d"><span class="segment-border"></span></div>
-            <div class="segment-y segment-e"><span class="segment-border"></span></div>
-            <div class="segment-y segment-f"><span class="segment-border"></span></div>
-            <div class="segment-x segment-g"><span class="segment-border"></span></div>
-          </div>
+        <div class="bgimg">
+            <div class="middle">
+                <h1>COMING SOON</h1>
+                <hr />
+                <p id="demo"></p>
+            </div>
+
+            <div class="bottom-middle">op will surely deliver</div>
         </div>
-      </div>
-    </div>
 
-    <!--Bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!--Homemade Scripts-->
-  </body>
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!--Homemade Scripts-->
+        <script src="../scripts/crazy.js"></script>
+    </body>
 </html>
