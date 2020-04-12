@@ -1,93 +1,93 @@
 #clock-container {
-  width: 980px;
-  height: 220px;
+    width: 980px;
+    height: 220px;
 }
 #display-2,
 #display-4 {
-  margin-right: 60px;
+    margin-right: 60px;
 }
 
 .vertical-center {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
 }
 
 .clock-box div.segment-x,
 .clock-box div.segment-y {
-  position: absolute;
+    position: absolute;
 }
 
 .clock-box span.segment-border {
-  display: block;
-  position: absolute;
+    display: block;
+    position: absolute;
 }
 
 .clock-box .segment-x {
-  width: 96px;
-  left: 13px;
-  border-bottom: 12px solid #000;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
+    width: 96px;
+    left: 13px;
+    border-bottom: 12px solid #000;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
 }
 
 .clock-box .segment-x .segment-border {
-  top: 12px;
-  left: -12px;
-  right: -12px;
-  border-top: 12px solid #000;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
+    top: 12px;
+    left: -12px;
+    right: -12px;
+    border-top: 12px solid #000;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
 }
 
 .clock-box .segment-y {
-  height: 96px;
-  width: 0;
-  border-right: 12px solid #000;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
+    height: 96px;
+    width: 0;
+    border-right: 12px solid #000;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
 }
 
 .clock-box .segment-y .segment-border {
-  position: relative;
-  left: 12px;
-  height: 96px;
-  margin-top: -12px;
-  border-left: 12px solid #000;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
+    position: relative;
+    left: 12px;
+    height: 96px;
+    margin-top: -12px;
+    border-left: 12px solid #000;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
 }
 
 .clock-box .segment-a {
-  top: 0;
+    top: 0;
 }
 
 .clock-box .segment-b {
-  top: 13px;
-  left: 98px;
+    top: 13px;
+    left: 98px;
 }
 
 .clock-box .segment-c {
-  top: 111px;
-  left: 98px;
+    top: 111px;
+    left: 98px;
 }
 
 .clock-box .segment-d {
-  top: 196px;
+    top: 196px;
 }
 
 .clock-box .segment-e {
-  top: 111px;
-  left: 0px;
+    top: 111px;
+    left: 0px;
 }
 
 .clock-box .segment-f {
-  top: 13px;
-  left: 0px;
+    top: 13px;
+    left: 0px;
 }
 
 .clock-box .segment-g {
-  top: 98px;
+    top: 98px;
 }
 
 .display-no-1 .segment-a,
@@ -95,46 +95,60 @@
 .display-no-1 .segment-e,
 .display-no-1 .segment-f,
 .display-no-1 .segment-g {
-  opacity: 0.1;
-  filter: alpha(opacity=10);
+    opacity: 0.1;
+    filter: alpha(opacity=10);
 }
 
 .display-no-2 .segment-c,
 .display-no-2 .segment-f {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-3 .segment-e,
 .display-no-3 .segment-f {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-4 .segment-a,
 .display-no-4 .segment-d,
 .display-no-4 .segment-e {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-5 .segment-b,
 .display-no-5 .segment-e {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-6 .segment-b {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-7 .segment-d,
 .display-no-7 .segment-e,
 .display-no-7 .segment-f,
 .display-no-7 .segment-g {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-9 .segment-e {
-  opacity: 0.1;
+    opacity: 0.1;
 }
 
 .display-no-0 .segment-g {
-  opacity: 0.1;
+    opacity: 0.1;
+}
+
+
+#easter-egg {
+    display: none;
+}
+
+@media only screen and (max-width: 990px) {
+    #clock-container {
+        display: none !important;
+    }
+    #easter-egg {
+        display: inline;
+    }
 }
