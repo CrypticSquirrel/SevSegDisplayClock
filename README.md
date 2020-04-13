@@ -1,6 +1,6 @@
 # Arduino 7 Segment Display Clock 
 
-This is the codebase for microprocessors' final project. This README will be updated as progress is made on the project.
+This is the codebase for microprocessors' final project for Edward Breja & Matt Lonto. This README will be updated as progress is made on the project.
 
 ##### --- [Demo Site](https://crypticsquirrel.github.io/SevSegDisplayClock/) ---
 
