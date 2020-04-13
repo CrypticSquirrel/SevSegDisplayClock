@@ -57,5 +57,6 @@ window.addEventListener('keypress', function(event) {
     if (keyCode === 32) {
         event.preventDefault();
         isPaused = !isPaused;
+        document.title = 'Stopwatch Paused!';
     }
 });
