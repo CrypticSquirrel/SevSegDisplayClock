@@ -1,6 +1,25 @@
 @import url("header.css");
 
 
+.noLink, .noLink:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.noLink {
+  transition: .5s ease;
+}
+
+.noLink:hover { 
+  transform: scale(1.05);
+}
+
+.noLink:hover .image {
+  opacity: 0.3;
+}
+
+
+
 
 /*
  * Dummy devices 
