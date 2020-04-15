@@ -14,3 +14,7 @@
 
 [help im stuck](https://circuitdigest.com/microcontroller-projects/arduino-nodejs-tutorial-control-led-brightness-with-web-interface)
 
+IDEA: Function to remove hours or seconds.
+ 1. Select #displays 1,2 -> display:none;
+ 2. Select #clock-container -> width: ~ 700px;
+ 

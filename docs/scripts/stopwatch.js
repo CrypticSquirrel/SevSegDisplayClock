@@ -1,22 +1,37 @@
+/**
+ * Script for the stopwatch.html page used to calculate time passed
+ */
+
+// Element that contains each number placeholder starting from the left of the page
 const display1 = document.getElementById('display-1');
 const display2 = document.getElementById('display-2');
 const display3 = document.getElementById('display-3');
 const display4 = document.getElementById('display-4');
 const display5 = document.getElementById('display-5');
 
+// Counter and flag global variables
 let isPaused = true;
 let currentMillis = 0;
 let currentSeconds = 0;
 let currentMinutes = 0;
 
+/**
+ * Fills in any missing leading zeros.
+ *
+ * @param {number} string string representation of a unit of time
+ */
 function zeroFill(string) {
-    let chars = string;
-    for (let i = 0, l = 2 - chars.length; i < l; i += 1) {
-        chars = `0${string}`;
+    let unitOfTime = string;
+    for (let i = 0, l = 2 - unitOfTime.length; i < l; i += 1) {
+        unitOfTime = `0${string}`;
     }
-    return chars;
+    return unitOfTime;
 }
 
+/**
+ * Calculates time past and changes display on the html page with by changing
+ * the css used for each number placeholder element.
+ */
 function updateDisplays() {
     if (!isPaused) {
         currentMillis += 10;
@@ -49,8 +64,11 @@ function updateDisplays() {
     }
 }
 
+// Runs the updateDisplays function every 100ms
 window.setInterval(updateDisplays, 100);
-
+/**
+ * Tracks spacebar input and changes flag accordingly.
+ */
 window.addEventListener('keypress', function(event) {
     const keyCode = event.which || event.keyCode;
 

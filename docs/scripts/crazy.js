@@ -1,9 +1,12 @@
+/**
+ * Placeholder script until actual content gets developed
+ */
+
 // Set the date we're counting down to
 const countDownDate = new Date('Jan 5, 2021 15:37:25').getTime();
 
 // Update the count down every 1 second
 const x = setInterval(function() {
-    // Get todays date and time
     const now = new Date().getTime();
 
     // Find the distance between now an the count down date
