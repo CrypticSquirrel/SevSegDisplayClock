@@ -1,4 +1,6 @@
-#clock-container, #instructions, #timer-finished {
+#clock-container,
+#instructions,
+#timer-finished {
     display: none;
 }
 
@@ -54,7 +56,6 @@ label {
     transition: 0.2s ease all;
 }
 
-/* active state */
 input:focus ~ label,
 input:valid ~ label {
     top: -20px;
@@ -87,7 +88,6 @@ input:valid ~ label {
     right: 50%;
 }
 
-/* active state */
 input:focus ~ .bar:before,
 input:focus ~ .bar:after {
     width: 50%;
@@ -104,7 +104,6 @@ input:focus ~ .bar:after {
     opacity: 0.5;
 }
 
-/* active state */
 input:focus ~ .highlight {
     -webkit-animation: inputHighlighter 0.3s ease;
     -moz-animation: inputHighlighter 0.3s ease;

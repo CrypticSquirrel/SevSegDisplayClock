@@ -1,3 +1,10 @@
+/**
+ * Express web server that handles integration between an arduino and
+ * a website by defining routes and using johnny-five's API
+ *
+ * Work in progress...
+ */
+
 // Dependencies
 const express = require('express');
 // const johnny_five=require("johnny-five");
@@ -9,4 +16,4 @@ const app = express();
 
 // Serves files in the docs directory
 app.listen(3000, () => console.log('listening at http://localhost:3000/'));
-app.use(express.static('docs', { extensions: ['html', 'htm'] }));
+app.use(express.static('docs'));

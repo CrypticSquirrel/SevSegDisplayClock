@@ -1,3 +1,8 @@
+/*
+ * css for any webpage that displays a seven segment display clock
+ */
+
+
 #clock-container {
     width: 980px;
     height: 220px;
