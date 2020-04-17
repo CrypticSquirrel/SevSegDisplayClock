@@ -52,6 +52,18 @@ function updateDisplays() {
         const displaySeconds = zeroFill(currentSeconds.toString());
         const displayMinutes = zeroFill(currentMinutes.toString());
 
+        fetch('/time', {
+            method: 'POST',
+            body: JSON.stringify({
+                millis: displayMillis,
+                minutes: displayMinutes,
+                seconds: displaySeconds,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
         document.title = `${displayMinutes}:${displaySeconds}`;
 
         const baseClass = 'col clock-box display-no-';

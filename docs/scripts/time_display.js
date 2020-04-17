@@ -37,6 +37,18 @@ function updateDisplays() {
 
     const baseClass = 'col clock-box display-no-';
 
+    fetch('/time', {
+        method: 'POST',
+        body: JSON.stringify({
+            hours: h,
+            minutes: m,
+            seconds: s,
+        }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
     display1.className = baseClass + h[0];
     display2.className = baseClass + h[1];
     display3.className = baseClass + m[0];
