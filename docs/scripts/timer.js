@@ -2,6 +2,8 @@
  * Script for the timer.html page used to calculate time remaining
  */
 
+/* eslint-disable no-unused-vars */
+
 // Element that contains each number placeholder starting from the left of the page
 const display1 = document.getElementById('display-1');
 const display2 = document.getElementById('display-2');
@@ -78,6 +80,18 @@ function updateDisplays() {
             const displaySeconds = zeroFill(currentSeconds.toString());
             const displayMinutes = zeroFill(currentMinutes.toString());
             const displayHours = zeroFill(currentHours.toString());
+
+            fetch('/time', {
+                method: 'POST',
+                body: JSON.stringify({
+                    hours: displayHours,
+                    minutes: displayMinutes,
+                    seconds: displaySeconds,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
             document.title = `${displayHours}:${displayMinutes}`;
 
