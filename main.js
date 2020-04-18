@@ -1,14 +1,14 @@
 /**
  * Express web server that handles integration between an arduino and
- * a website by defining routes and using johnny-five's API.
+ * a website by defining routes while using johnny-five's API.
  */
 
-// Dependencies
+/* ------------------------------ Dependencies ------------------------------ */
 const express = require('express');
 const five = require('johnny-five');
 const bodyParser = require('body-parser');
 
-// Global variables
+/* ---------------------------- Global Variables ---------------------------- */
 const app = express();
 const board = new five.Board();
 
@@ -31,45 +31,61 @@ const SevenSegNumbers = [
     new five.Leds([2, 3, 4, 5, 13, 21]),
 ];
 
-// Needed to parse json for POST routes
+/* ----------------------------- Initialization ----------------------------- */
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-board.on('ready', function() {
-    // Launches website
-    app.listen(3000, () => console.log('listening at http://localhost:3000/'));
-    app.use(express.static('docs'));
+app.listen(3000, () => console.log('listening at http://localhost:3000/'));
+app.use(express.static('docs'));
 
+/* ---------------------------- Helper Functions ---------------------------- */
+
+const resetDisplay = () => {
+    digitPins.forEach(item => {
+        item.on();
+        segmentLEDs.off();
+        item.off();
+    });
+};
+
+/* ----------------------------- Arduino Routing ---------------------------- */
+
+board.on('ready', function() {
     /**
-     * Route that gets the time from the client-side javascript.
+     * Route that gets the time from the client-side javascript to the 7-segment display.
      */
     app.post('/time', (req, res) => {
-        const firstDigit = req.body.minutes[0];
-        const secondDigit = req.body.minutes[1];
-        const thirdDigit = req.body.seconds[0];
-        const fourthDigit = req.body.seconds[1];
+        const timeData = [
+            parseInt(req.body.minutes[0]),
+            parseInt(req.body.minutes[1]),
+            parseInt(req.body.seconds[0]),
+            parseInt(req.body.seconds[1]),
+        ];
 
-        // TODO: Move this all to it's own function w/ documenation
-
-        // reset
-        digitPins.forEach(item => {
-            item.on();
-            segmentLEDs.off();
-            item.off();
+        resetDisplay();
+        timeData.forEach((number, index) => {
+            digitPins[index].on();
+            SevenSegNumbers[number].on();
+            digitPins[index].off();
         });
+    });
 
-        // write
-        digitPins[0].on();
-        SevenSegNumbers[firstDigit].on();
-        digitPins[0].off();
-        digitPins[1].on();
-        SevenSegNumbers[secondDigit].on();
-        digitPins[1].off();
-        digitPins[2].on();
-        SevenSegNumbers[thirdDigit].on();
-        digitPins[2].off();
-        digitPins[3].on();
-        SevenSegNumbers[fourthDigit].on();
-        digitPins[3].off();
+    /**
+     * Route to reset 7-segment display.
+     */
+    app.post('/reset', () => {
+        resetDisplay();
+    });
+
+    /**
+     * Route to control each segment in the 7-segment display.
+     */
+    app.post('/sandbox', (req, res) => {
+        const pinNumber = parseInt(req.body.number);
+        const segment = parseInt(req.body.segment);
+        digitPins[pinNumber].on();
+        segmentLEDs[segment].toggle();
+        digitPins[pinNumber].off();
     });
 });
