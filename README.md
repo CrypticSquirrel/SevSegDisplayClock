@@ -1,31 +1,17 @@
-# Arduino 7 Segment Display Clock 
+# Arduino Clock Web Interface
 
-This is the codebase for Edward Breja & Matt Lonto's microprocessor final project. This README will be updated as progress is made on the project.
+This repository houses the codebase for Edward Breja & Matt Lonto's Microprocessor Systems final project. Our project features an interactive website that provides you with a live preview of time past, time remaining, or current time in an elegant Seven Segment Digit style. Our interactive application will interface with an arduino's hooked up seven segment display through a Node.js (Express, Johnny-Five) server. To get started, read our documentation!
 
-##### --- [Demo Site](https://crypticsquirrel.github.io/SevSegDisplayClock/) ---
+Documentation 
+---
 
-### Progress
+If you like visuals, you can check out our [demo site](https://crypticsquirrel.github.io/SevSegDisplayClock/) hosted here using github pages. This only demonstrates the front end aspect of this project.
 
-- ~~Boilerplate code has been added. Logic to keep track of time by using the millis() function.~~ 
-- ~~Waiting on 7 segment display part~~ 
-- Got node.js to successfully blink an LED 
-- Boilerplate design and node web server added 
-- Demo Site is now live! Check it out
+The [developer documentation](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/develop/documentation/DeveloperDocumentation.md) has some setup instructions and code explanation.
 
-### Developer Documentation
+Our [final report](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/develop/documentation/Report.md) has a good high level description of what's going on. It is written in a loose lab report format for the ENGR 385 class at Andrews University.
 
-First you will need Node/Express to run the server
-- Clone the repository
-- Install Node.js
-- If you are using MacOS you can use brew to install node:
-``` 
-brew install node
-```
-- Once you have node you can install all relevant dependencies (while in repository root):
-``` 
-npm install
-```
-- Now you can run the server with node or nodemon from the command line:
-``` 
-nodemon server.js
-```
+License
+---
+
+MIT License, Enjoy!

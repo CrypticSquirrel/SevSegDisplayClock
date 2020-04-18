@@ -16,7 +16,6 @@ $(document).ready(function() {
                 return '0.1';
             },
         });
-        console.log(this.id[1]);
 
         fetch('/sandbox', {
             method: 'POST',
