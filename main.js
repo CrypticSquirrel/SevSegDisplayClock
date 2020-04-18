@@ -70,4 +70,22 @@ board.on('ready', function() {
             digitPins[index].off();
         });
     });
+
+    /**
+     * Route to reset 7-segment display.
+     */
+    app.post('/reset', () => {
+        resetDisplay();
+    });
+
+    /**
+     * Route to control each segment in the 7-segment display.
+     */
+    app.post('/sandbox', (req, res) => {
+        const pinNumber = parseInt(req.body.number);
+        const segment = parseInt(req.body.segment);
+        digitPins[pinNumber].on();
+        segmentLEDs[segment].toggle();
+        digitPins[pinNumber].off();
+    });
 });
