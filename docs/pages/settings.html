@@ -49,46 +49,55 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-12">
-                    <legend>Options</legend>
+                    <legend>Preferences</legend>
                 </div>
             </div>
             <hr class="mt-2 mb-3" />
             <div class="row">
                 <div class="col-md-3">
-                    <h5>Clock</h5>
+                    <h5>Display Options</h5>
                 </div>
                 <div class="col-md-9">
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" /> Test </label>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label
+                                ><input type="checkbox" id="military-time" value="" /> 12 hour
+                                time</label
+                            >
+                        </div>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" /> Testing</label>
+
+                    <div class="form-group">
+                        <select class="form-control-small" id="clock-display">
+                            <option>hh:mm:ss</option>
+                            <option>hh:mm</option>
+                            <option>mm:ss</option>
+                        </select>
+                        <label>Timer/Clock display</label>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control-small" id="stopwatch-display">
+                            <option>hh:mm:m</option>
+                            <option>hh:mm</option>
+                        </select>
+                        <label>Stopwatch display</label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <h5>Timer</h5>
+                    <h5>Extras</h5>
                 </div>
                 <div class="col-md-9">
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" /> Test </label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" /> Testing</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <h5>Stopwatch</h5>
-                </div>
-                <div class="col-md-9">
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" /> Test </label>
-                    </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" /> Testing</label>
+                    <div class="form-group">
+                        <select class="form-control-small" id="alarm-sound">
+                            <option></option>
+                            <option>alarm clock</option>
+                            <option>fog horn</option>
+                            <option>wristwatch alarm</option>
+                            <option>rooster</option>
+                        </select>
+                        <label>Sound select (leave blank for no sound)</label>
                     </div>
                 </div>
             </div>
@@ -96,7 +105,10 @@
             <hr class="mt-2 mb-3" />
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-secondary">Save Changes</button>
+                    <button type="button" id="save" class="btn btn-secondary">Save Changes</button>
+                    <button type="button" id="sound-test" class="btn btn-secondary">
+                        Sound Test
+                    </button>
                 </div>
             </div>
         </div>
@@ -104,6 +116,8 @@
         <!--Bootstrap-->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!--Cookies-->
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
         <!--Homemade Scripts-->
         <script src="../scripts/settings.js"></script>
     </body>
