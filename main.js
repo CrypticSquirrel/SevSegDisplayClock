@@ -56,12 +56,27 @@ board.on('ready', function() {
      * Route that gets the time from the client-side javascript to the 7-segment display.
      */
     app.post('/time', (req, res) => {
-        const timeData = [
-            parseInt(req.body.minutes[0]),
-            parseInt(req.body.minutes[1]),
-            parseInt(req.body.seconds[0]),
-            parseInt(req.body.seconds[1]),
-        ];
+        let timeData;
+        if (req.body.isHoursDisplayed === 'true') {
+            timeData = [
+                parseInt(req.body.hours[0]),
+                parseInt(req.body.hours[1]),
+                parseInt(req.body.minutes[0]),
+                parseInt(req.body.minutes[1]),
+            ];
+        } else {
+            timeData = [
+                parseInt(req.body.minutes[0]),
+                parseInt(req.body.minutes[1]),
+                parseInt(req.body.seconds[0]),
+                parseInt(req.body.seconds[1]),
+            ];
+        }
+        if (req.body.isRegularFormat === 'true') {
+            timeData.forEach((number, index) => {
+                timeData[index] = number % 12;
+            });
+        }
 
         resetDisplay();
         timeData.forEach((number, index) => {
