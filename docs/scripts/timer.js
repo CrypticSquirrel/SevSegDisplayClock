@@ -2,6 +2,7 @@
  * Script for the timer.html page used to calculate time remaining
  */
 
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
 // Element that contains each number placeholder starting from the left of the page
@@ -66,6 +67,12 @@ function updateDisplays() {
             $('#instructions').hide();
             $('#timer-finished').show();
             document.title = 'Timer Done!';
+            const currentSound = Cookies.get('timer-sound-path');
+            console.log(currentSound);
+            if (currentSound) {
+                const audio = new Audio(`${currentSound}`);
+                audio.play();
+            }
             isPaused = true;
         } else {
             if (currentSeconds < 0) {
@@ -93,7 +100,7 @@ function updateDisplays() {
                 },
             });
 
-            document.title = `${displayHours}:${displayMinutes}`;
+            document.title = `${displayMinutes}:${displaySeconds}`;
 
             const baseClass = 'col clock-box display-no-';
 
