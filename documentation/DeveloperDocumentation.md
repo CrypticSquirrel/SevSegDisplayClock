@@ -17,3 +17,5 @@ The [time_display.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob
 The [stopwatch.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/stopwatch.js) and [timer.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/timer.js) files work similarly. They add some extra logic to listen for user input to stop/start the timer/stopwatch. The timer also has a user input to pick the length of time.
 
 The [custom.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/custom.js) file sends a POST request to the server to reset the display on the 7 segment display. It will then listen whenever a user clicks on a segment on the website. It will then send a POST request to the server with information on the specific segment and index clicked.
+
+TODO: [settings.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/settings.js) explanation
