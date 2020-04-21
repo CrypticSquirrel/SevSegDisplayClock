@@ -5,12 +5,15 @@
 /* eslint-disable indent */
 /* eslint-disable no-undef */
 
-let currentSound;
+/* ---------------------------- Global Variables ---------------------------- */
+
+let currentSoundPath;
+let soundSelectVal;
 
 /* ---------------------------- Helper Functions ---------------------------- */
 
-const setSound = () => {
-    switch (currentSound) {
+const getSoundPath = () => {
+    switch (soundSelectVal) {
         case 'alarm clock':
             return '../resources/sounds/alarm-clock.wav';
         case 'synth':
@@ -24,28 +27,39 @@ const setSound = () => {
     }
 };
 
+const initializeFormValues = () => {
+    const militaryCheck = Cookies.get('military-time');
+    const clockSelectVal = Cookies.get('clock-display');
+    const stopwatchSelectVal = Cookies.get('stopwatch-display');
+    soundSelectVal = Cookies.get('timer-sound-val');
+    currentSoundPath = Cookies.get('timer-sound-path');
+
+    $('#military-time').prop('checked', militaryCheck === 'true');
+    $('#clock-display').val(`${clockSelectVal}`);
+    $('#stopwatch-display').val(`${stopwatchSelectVal}`);
+    $('#timer-sound').val(`${soundSelectVal}`);
+};
+
 /* ---------------------------- JQuery Selectors ---------------------------- */
 
 $(document).ready(() => {
-    const soundName = Cookies.get('timer-sound-name');
-    currentSound = Cookies.get('timer-sound-path');
-    $('#timer-sound').val(`${soundName}`);
-
+    initializeFormValues();
     $('#save').click(() => {
-        const military = $('#military-time').val();
-        Cookies.set('military-time', `${military}`);
+        const military = $('#military-time').is(':checked');
         const clock = $('#clock-display').val();
-        Cookies.set('clock-display', `${clock}`);
         const stopwatch = $('#stopwatch-display').val();
+        soundSelectVal = $('#timer-sound').val();
+        currentSoundPath = getSoundPath();
+
+        Cookies.set('military-time', `${military}`);
+        Cookies.set('clock-display', `${clock}`);
         Cookies.set('stopwatch-display', `${stopwatch}`);
-        currentSound = $('#timer-sound').val();
-        Cookies.set('timer-sound-name', `${currentSound}`);
-        currentSound = setSound();
-        Cookies.set('timer-sound-path', `${currentSound}`);
+        Cookies.set('timer-sound-val', `${soundSelectVal}`);
+        Cookies.set('timer-sound-path', `${currentSoundPath}`);
     });
     $('#sound-test').click(() => {
-        if (currentSound) {
-            const audio = new Audio(`${currentSound}`);
+        if (currentSoundPath) {
+            const audio = new Audio(`${currentSoundPath}`);
             audio.play();
         }
     });

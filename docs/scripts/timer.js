@@ -68,7 +68,6 @@ function updateDisplays() {
             $('#timer-finished').show();
             document.title = 'Timer Done!';
             const currentSound = Cookies.get('timer-sound-path');
-            console.log(currentSound);
             if (currentSound) {
                 const audio = new Audio(`${currentSound}`);
                 audio.play();
