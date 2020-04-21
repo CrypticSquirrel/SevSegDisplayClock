@@ -28,13 +28,13 @@ const getSoundPath = () => {
 };
 
 const initializeFormValues = () => {
-    const militaryCheck = Cookies.get('military-time');
+    const regularTimeCheckmark = Cookies.get('regular-time');
     const clockSelectVal = Cookies.get('clock-display');
     const stopwatchSelectVal = Cookies.get('stopwatch-display');
     soundSelectVal = Cookies.get('timer-sound-val');
     currentSoundPath = Cookies.get('timer-sound-path');
 
-    $('#military-time').prop('checked', militaryCheck === 'true');
+    $('#regular-time').prop('checked', regularTimeCheckmark === 'true');
     $('#clock-display').val(`${clockSelectVal}`);
     $('#stopwatch-display').val(`${stopwatchSelectVal}`);
     $('#timer-sound').val(`${soundSelectVal}`);
@@ -45,13 +45,13 @@ const initializeFormValues = () => {
 $(document).ready(() => {
     initializeFormValues();
     $('#save').click(() => {
-        const military = $('#military-time').is(':checked');
+        const military = $('#regular-time').is(':checked');
         const clock = $('#clock-display').val();
         const stopwatch = $('#stopwatch-display').val();
         soundSelectVal = $('#timer-sound').val();
         currentSoundPath = getSoundPath();
 
-        Cookies.set('military-time', `${military}`);
+        Cookies.set('regular-time', `${military}`);
         Cookies.set('clock-display', `${clock}`);
         Cookies.set('stopwatch-display', `${stopwatch}`);
         Cookies.set('timer-sound-val', `${soundSelectVal}`);

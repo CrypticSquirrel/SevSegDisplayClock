@@ -5,19 +5,57 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
-// Element that contains each number placeholder starting from the left of the page
+/* ---------------------------- Global Variables ---------------------------- */
+
 const display1 = document.getElementById('display-1');
 const display2 = document.getElementById('display-2');
 const display3 = document.getElementById('display-3');
 const display4 = document.getElementById('display-4');
 const display5 = document.getElementById('display-5');
 const display6 = document.getElementById('display-6');
+const clockContainer = document.getElementById('clock-container');
 
 // Counter and flag global variables
 let isPaused = true;
 let currentSeconds = 0;
 let currentMinutes = 0;
 let currentHours = 0;
+
+let displaySeconds = true;
+let displayHours = true;
+
+/* ---------------------------- Helper Functions ---------------------------- */
+
+const initializePageView = () => {
+    const timeFormat = Cookies.get('clock-display');
+
+    if (timeFormat === 'hh:mm') {
+        $('#display-5').hide();
+        $('#display-6').hide();
+        clockContainer.style.width = '780px';
+        displaySeconds = false;
+    } else if (timeFormat === 'mm:ss') {
+        $('#display-1').hide();
+        $('#display-2').hide();
+        clockContainer.style.width = '780px';
+        displayHours = false;
+    }
+};
+
+/**
+ * Fills in any missing leading zeros.
+ *
+ * @param {number} string string representation of a unit of time
+ */
+function zeroFill(string) {
+    let chars = string;
+    for (let i = 0, l = 2 - chars.length; i < l; i += 1) {
+        chars = `0${string}`;
+    }
+    return chars;
+}
+
+/* ---------------------------- DOM Manipulation ---------------------------- */
 
 /**
  * Starts the timer and changes displays if the user enters valid numbers.
@@ -36,22 +74,10 @@ function startTimer() {
         $('#clock-container').show();
         $('#instructions').show();
         isPaused = false;
+        initializePageView();
     } else {
         alert('Each input must be numbers and between 0-59!');
     }
-}
-
-/**
- * Fills in any missing leading zeros.
- *
- * @param {number} string string representation of a unit of time
- */
-function zeroFill(string) {
-    let chars = string;
-    for (let i = 0, l = 2 - chars.length; i < l; i += 1) {
-        chars = `0${string}`;
-    }
-    return chars;
 }
 
 /**
@@ -83,38 +109,45 @@ function updateDisplays() {
                 currentHours -= 1;
             }
 
-            const displaySeconds = zeroFill(currentSeconds.toString());
-            const displayMinutes = zeroFill(currentMinutes.toString());
-            const displayHours = zeroFill(currentHours.toString());
+            const secondsDisplay = zeroFill(currentSeconds.toString());
+            const minutesDisplay = zeroFill(currentMinutes.toString());
+            const hoursDisplay = zeroFill(currentHours.toString());
 
             fetch('/time', {
                 method: 'POST',
                 body: JSON.stringify({
-                    hours: displayHours,
-                    minutes: displayMinutes,
-                    seconds: displaySeconds,
+                    hours: hoursDisplay,
+                    minutes: minutesDisplay,
+                    seconds: secondsDisplay,
+                    isHoursDisplayed: displayHours,
+                    isRegularFormat: 'false',
                 }),
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
 
-            document.title = `${displayMinutes}:${displaySeconds}`;
+            if (displayHours && !displaySeconds) {
+                document.title = `${hoursDisplay}:${minutesDisplay}`;
+            } else {
+                document.title = `${minutesDisplay}:${secondsDisplay}`;
+            }
 
             const baseClass = 'col clock-box display-no-';
 
-            display1.className = baseClass + displayHours[0];
-            display2.className = baseClass + displayHours[1];
-            display3.className = baseClass + displayMinutes[0];
-            display4.className = baseClass + displayMinutes[1];
-            display5.className = baseClass + displaySeconds[0];
-            display6.className = baseClass + displaySeconds[1];
+            if (displayHours) {
+                display1.className = baseClass + hoursDisplay[0];
+                display2.className = baseClass + hoursDisplay[1];
+            }
+            display3.className = baseClass + minutesDisplay[0];
+            display4.className = baseClass + minutesDisplay[1];
+            if (displaySeconds) {
+                display5.className = baseClass + secondsDisplay[0];
+                display6.className = baseClass + secondsDisplay[1];
+            }
         }
     }
 }
-
-// Runs the updateDisplays function every second
-window.setInterval(updateDisplays, 1000);
 
 /**
  * Tracks spacebar input and changes flag accordingly.
@@ -128,3 +161,5 @@ window.addEventListener('keypress', function(event) {
         document.title = 'Timer Paused!';
     }
 });
+
+window.setInterval(updateDisplays, 1000);
