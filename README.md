@@ -7,9 +7,9 @@ Documentation
 
 If you like visuals, you can check out our [demo site](https://crypticsquirrel.github.io/SevSegDisplayClock/) hosted here using github pages. This only demonstrates the front end aspect of this project.
 
-The [developer documentation](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/develop/documentation/DeveloperDocumentation.md) has some setup instructions and code explanation.
+The [developer documentation](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/documentation/DeveloperDocumentation.md) has some setup instructions and code explanation.
 
-Our [final report](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/develop/documentation/Report.md) has a good high level overview of what's going on. It is written in a loose lab report format for the ENGR 385 class at Andrews University.
+Our [final report](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/documentation/Report.md) has a good high level overview of what's going on. It is written in a loose lab report format for the ENGR 385 class at Andrews University.
 
 License
 ---
