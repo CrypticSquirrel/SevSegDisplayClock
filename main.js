@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 /* ---------------------------- Global Variables ---------------------------- */
 const app = express();
 const board = new five.Board();
-// 11 -> 16 12 -> 14 13 -> 15
+// CHANGES: 11 -> 16 12 -> 14 13 -> 15
 // Pins represent: A B C D E F G
 const segmentLEDs = new five.Leds([2, 3, 4, 5, 14, 15, 21]);
 // Left to Right
@@ -23,12 +23,12 @@ const SevenSegNumbers = [
     new five.Leds([3, 4]),
     new five.Leds([2, 3, 5, 21]),
     new five.Leds([2, 3, 4, 5, 21]),
-    new five.Leds([3, 4, 13, 21]),
-    new five.Leds([2, 4, 5, 13, 21]),
-    new five.Leds([2, 4, 5, 14, 13, 21]),
+    new five.Leds([3, 4, 15, 21]),
+    new five.Leds([2, 4, 5, 15, 21]),
+    new five.Leds([2, 4, 5, 14, 15, 21]),
     new five.Leds([2, 3, 4]),
-    new five.Leds([2, 3, 4, 5, 14, 13, 21]),
-    new five.Leds([2, 3, 4, 5, 13, 21]),
+    new five.Leds([2, 3, 4, 5, 14, 15, 21]),
+    new five.Leds([2, 3, 4, 5, 15, 21]),
 ];
 
 /* ----------------------------- Initialization ----------------------------- */
