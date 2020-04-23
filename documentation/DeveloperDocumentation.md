@@ -18,4 +18,4 @@ The [stopwatch.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/ma
 
 The [custom.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/custom.js) file sends a POST request to the server to reset the display on the 7 segment display. It will then listen whenever a user clicks on a segment on the website. It will then send a POST request to the server with information on the specific segment and index clicked.
 
-TODO: [settings.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/settings.js) explanation
+The [settings.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/settings.js) initializes the settings page from any cookies the user might have if they had selected something beforehand (this will remember any options between sessions). It also has 2 click handers that initialize the cookies and play the sound saved in the cookies respectively.
