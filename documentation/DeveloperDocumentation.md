@@ -1,6 +1,6 @@
 # Project Setup
 
-This project uses Node and Express. Clone it and run `npm install` in the root repository. If you do not have node yet, read the [node.js documentation](https://nodejs.org/en/docs/) first.
+This project uses Node and Express. Clone it locally and run `npm install` in the root repository. If you do not have node yet, read the [node.js documentation](https://nodejs.org/en/docs/) first. 
 
 # Hardware Setup
 
