@@ -12,15 +12,13 @@ int d3 = 10;
 int d2 = 8;
 int d1 = 7;
 
-/* millis() for timing: https://forum.arduino.cc/index.php?topic=503368.0 */
 const unsigned long period = 1000;
 unsigned long startMillis;
 unsigned long currentMillis;
 int currentSeconds = 0;
 int currentMinutes = 0;
-int currentHours;
+int currentHours = 0;
 
-int const digitPins[] = {d1, d2, d3, d4};
 int segPins[] = {a, b, c, d, e, f, g}; 
 byte segCode[10][7] = {
     /*
