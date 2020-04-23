@@ -101,7 +101,6 @@ void setup()
 void loop()
 {
   calculateTime();
-  reset();
 
   //x0:00
   reset();
