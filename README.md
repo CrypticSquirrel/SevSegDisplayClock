@@ -11,6 +11,22 @@ The [developer documentation](https://github.com/CrypticSquirrel/SevSegDisplayCl
 
 Our [final report](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/documentation/Report.md) has a good high level overview of what's going on. It is written in a loose lab report format for the ENGR 385 class at Andrews University.
 
+Attribution 
+---
+
+#### Photos
+
+* [Timer](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/pics/alessio-tecleme-timer.jpg) by Alessio Tecleme on Unsplash
+* [Flip Clock](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/pics/djim-loic-crazy.jpg) by Djim Loic on Unsplash
+* [Stopwatch](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/pics/sabri-tuzcu-stopwatch.jpg) by Sabri Tuzcu on Unsplash
+* [LED Clock](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/pics/yasin-hasan-clock.jpg) by Yasin Hasan on Unsplash
+
+#### Sounds
+* [Alarm](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/sounds/alarm-clock.wav) by bone666138 on Freesound
+* [Dun dun dun](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/sounds/dramatic.wav) by Simon_Lacelle on Freesound
+* [Moo](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/sounds/moo.mp3) by toddtruax on Freesound
+* [Synth](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/resources/sounds/synth.wav) by InspectorJ on Freesound
+
 License
 ---
 
