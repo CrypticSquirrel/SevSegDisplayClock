@@ -27,8 +27,7 @@ app.use(express.static('docs'));
  * Route that gets the time from the client-side javascript to the 7-segment display.
  */
 app.post('/time', (req, res) => {
-    console.log(`${req.body.minutes}:${req.body.seconds}`);
-    if (req.body.isHoursDisplayed === 'true') {
+    if (req.body.isHoursDisplayed === true) {
         if (req.body.isRegularFormat === 'true') {
             const regHours = parseInt(req.body.hours) % 12;
             digits.print(`${regHours}:${req.body.minutes}`);
@@ -38,6 +37,8 @@ app.post('/time', (req, res) => {
     } else {
         digits.print(`${req.body.minutes}:${req.body.seconds}`);
     }
+    res.status(200);
+    res.end();
 });
 
 /**
@@ -45,14 +46,6 @@ app.post('/time', (req, res) => {
  */
 app.post('/reset', () => {
     digits.clear();
-});
-
-/**
- * Route to control each segment in the 7-segment display.
- */
-app.post('/sandbox', (req, res) => {
-    const pinNumber = parseInt(req.body.number);
-    const segment = parseInt(req.body.segment);
 });
 
 /* ----------------------------- Arduino Initialization ---------------------------- */
