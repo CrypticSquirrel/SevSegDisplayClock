@@ -1,19 +1,18 @@
 # Introduction
 
-From the beginning of this class, we took a journey learning about architecture of the modern computer. From electrons and LEDs to 
+From the beginning of this class, we took a journey learning about architecture of the modern computer. From electrons to LEDs to 
 machine code and assembly we made our way to modern programming languages like C. This project tries to encapsulate important lessons 
 we learned along the way while trying to tie it to the ever evolving tech world we live in now. In this project we’ll take LED displays, 
 wire it to an arduino, and then transition from C to Javascript in our own hosted web server. A user will be able to interface with the arduino and LED displays from a website that will act as a clock, timer, or stopwatch.
 
 # Hardware
 
-The hardware we use in this project includes wires, 4 resistors, a ZS-042 DS3231 RTC module, an Arduino Pro Micro, a breadboard, 
-and a 4 digit seven segment display. The seven segment display we’re using is a common cathode display. Wiring the device simply required attaching the pins of the display to their own port, and correctly setting up the real time clock module. 
+The hardware we use in this project includes wires, 4 resistors, an Arduino Pro Micro, a breadboard, and a 4 digit seven segment display. The seven segment display we’re using is a common cathode display. Wiring the device simply required attaching the pins of the display to their own port. 
 
 <img src="https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/develop/documentation/pics/clock.jpg" width="500">
 
 In order to have a clear idea of which lights on the segment display are connected to which ports, we created this graphic 
-that shows all the relevant information. The D1, D2, D3, and D4 pins on the segment display need to be run through resistors 
+that shows all the relevant information. The D1, D2, D3, and D4 pins on the segment display need to be run through 91k resistors 
 before connecting to the arduino. 
 
 <img src="https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/develop/documentation/pics/pin-info.png" width="500">
