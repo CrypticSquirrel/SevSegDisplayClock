@@ -16,7 +16,7 @@ Our [main.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/
 
 ### Client-Side Javascript 
 
-The [time_display.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/time_display.js) file gets the time from the user with the Date() object and changes the display of the seven segment display on the website based on that time. To do this to selects each single digit display from `display-[1-6]` and changes the class name `display-no-[0-9]`. This will change the css to 10 predefined styles for each number. It will also send a POST request with the current seconds, minutes, and hours. This change happens every second.
+The [time_display.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/time_display.js) file gets the time from the user with the Date() object and changes the display of the seven segment display on the website based on that time. To do this it selects each single digit display from `display-[1-6]` and changes the class name `display-no-[0-9]`. This will change the css to 10 predefined styles for each number. It will also send a POST request with the current seconds, minutes, and hours. This change happens every second.
 
 The [stopwatch.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/stopwatch.js) and [timer.js](https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/docs/scripts/timer.js) files work similarly. They add some extra logic to listen for user input to stop/start the timer/stopwatch. The timer also has a user input to pick the length of time.
 
