@@ -2,6 +2,11 @@
 
 This repository houses the codebase for Edward Breja & Matt Lonto's Microprocessor Systems final project. Our project features an interactive website that provides you with a live preview of time past, time remaining, or current time in an elegant Seven Segment Digit style. Our interactive application will interface with an arduino's hooked up seven segment display through a Node.js (Express, Johnny-Five) server. To get started, read our documentation!
 
+Demo
+---
+
+<img src="https://github.com/CrypticSquirrel/SevSegDisplayClock/blob/master/documentation/pics/demo.gif" width="500">
+
 Documentation 
 ---
 
