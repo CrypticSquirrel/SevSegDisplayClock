@@ -4,11 +4,13 @@
  */
 
 /* ------------------------------ Dependencies ------------------------------ */
+
 const express = require('express');
 const { Board, Led } = require('johnny-five');
 const bodyParser = require('body-parser');
 
 /* ---------------------------- Global Variables ---------------------------- */
+
 const app = express();
 const board = new Board();
 let digits;
@@ -17,9 +19,6 @@ let digits;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.listen(3000, () => console.log('listening at http://localhost:3000/'));
-app.use(express.static('docs'));
 
 /* ---------------------------- Routing ---------------------------- */
 
@@ -51,9 +50,9 @@ app.post('/reset', () => {
 /* ----------------------------- Arduino Initialization ---------------------------- */
 
 function startServer() {
-    app.listen('5000', () => {
-        console.log('App listening on port 5000');
-    });
+    app.listen(3000, () => console.log('listening at http://localhost:3000/'));
+    app.use(express.static('docs'));
+
     digits = new Led.Digits({
         controller: 'HT16K33',
     });
