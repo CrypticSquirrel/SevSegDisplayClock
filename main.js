@@ -27,7 +27,7 @@ app.use(bodyParser.json());
  */
 app.post('/time', (req, res) => {
     if (req.body.isHoursDisplayed === true) {
-        if (req.body.isRegularFormat === 'true') {
+        if (req.body.isRegularFormat === true) {
             const regHours = parseInt(req.body.hours) % 12;
             digits.print(`${regHours}:${req.body.minutes}`);
         } else {
